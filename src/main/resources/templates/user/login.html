@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+
+<body>
+<form th:action="@{/login}" method="POST">
+    <div th:if="${param.error}" style="color: red">
+        Bad Credentials
+    </div>
+    <label for="username">Username:
+        <input id="username" type="text" name="username">
+    </label><br>
+    <label for="password">Password:
+        <input id="password" type="password" name="password">
+    </label><br>
+    <button type="submit">Login</button>
+</form>
+<div>
+    <div>Login with:</div>
+    <a href="/oauth2/authorization/google">Google</a>
+</div>
+<form action="/users/registration">
+    <button type="submit">Registration</button>
+</form>
+</body>
+</html>
