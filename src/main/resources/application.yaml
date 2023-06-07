@@ -26,6 +26,8 @@ logging:
     root: INFO
     com.yadev.spring.database.repository: INFO
     org.springframework.jdbc.core: TRACE
+    org.springframework.security: TRACE
+
   file:
     name: yadev.log
     path: /
@@ -59,5 +61,5 @@ spring:
           google:
             clientId: 675970289473-e09s8l0poaa893l3emod7na44remakob.apps.googleusercontent.com
             clientSecret: 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
-            redirectUri: http://localhost:8080/login/oath2/code/google
+            redirectUri: http://localhost:8080/login/oauth2/code/google
             scope: openid,email,profile
