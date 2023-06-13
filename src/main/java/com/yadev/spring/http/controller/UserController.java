@@ -2,7 +2,7 @@ package com.yadev.spring.http.controller;
 
 import com.yadev.spring.database.entity.Role;
 import com.yadev.spring.dto.PageResponse;
-import com.yadev.spring.dto.UserCreateEditDto;
+import com.yadev.spring.dto.    UserCreateEditDto;
 import com.yadev.spring.dto.UserFilter;
 import com.yadev.spring.dto.UserReadDto;
 import com.yadev.spring.service.CompanyService;
@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -43,7 +44,7 @@ public class UserController {
         return "user/users";
     }
 
-    //    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     @GetMapping("/{id}")
     public String findById(@PathVariable("id") Long id,
                            Model model,

@@ -25,8 +25,8 @@ logging:
   level:
     root: INFO
     com.yadev.spring.database.repository: INFO
-    org.springframework.jdbc.core: TRACE
-    org.springframework.security: TRACE
+#    org.springframework.jdbc.core: TRACE
+#    org.springframework.security: TRACE
 
   file:
     name: yadev.log
