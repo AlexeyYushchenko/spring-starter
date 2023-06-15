@@ -29,12 +29,13 @@ configurations {
 }
 
 dependencies {
+    implementation project(':common-logging-starter')
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
+//    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
     implementation 'org.springframework.security:spring-security-oauth2-client'
     implementation 'org.springframework.security:spring-security-oauth2-jose'
@@ -64,11 +65,13 @@ querydsl {
     querydslSourcesDir = "$buildDir/generated/sources/annotationProcessor/java/main"
 }
 
+initQuerydslSourcesDir.dependsOn clean
+
 compileQuerydsl{
 //    enabled = false;
     options.annotationProcessorPath = configurations.querydsl
 }
-compileQuerydsl.dependsOn(clean)
+//compileQuerydsl.dependsOn(clean)
 
 //clean classes
 

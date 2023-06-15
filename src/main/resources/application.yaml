@@ -21,11 +21,16 @@ db:
 
 spring.profiles.active: qa
 
+app.common.logging:
+  enabled: true
+  level: INFO
+
 logging:
   level:
     root: INFO
-    com.yadev.spring.database.repository: INFO
-#    org.springframework.jdbc.core: TRACE
+    com.com.yadev.spring.database.pool: INFO
+    org.springframework.jdbc.core: TRACE
+#    com.yadev.spring.database.repository: INFO
 #    org.springframework.security: TRACE
 
   file:
