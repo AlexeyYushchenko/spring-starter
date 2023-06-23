@@ -9,11 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.util.Optional;
-import java.util.function.Predicate;
-
-import static java.util.function.Predicate.*;
+import static java.util.function.Predicate.not;
 
 @Component
 @RequiredArgsConstructor

@@ -21,12 +21,17 @@ db:
 
 spring.profiles.active: qa
 
+app.common.logging:
+  enabled: true
+  level: INFO
+
 logging:
   level:
     root: INFO
-    com.yadev.spring.database.repository: INFO
+    com.com.yadev.spring.database.pool: INFO
     org.springframework.jdbc.core: TRACE
-    org.springframework.security: TRACE
+#    com.yadev.spring.database.repository: INFO
+#    org.springframework.security: TRACE
 
   file:
     name: yadev.log
@@ -63,3 +68,13 @@ spring:
             clientSecret: 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
             redirectUri: http://localhost:8080/login/oauth2/code/google
             scope: openid,email,profile
+  messages:
+    basename: messages
+springdoc:
+  swagger-ui:
+    oauth:
+      clientId: 675970289473-e09s8l0poaa893l3emod7na44remakob.apps.googleusercontent.com
+      clientSecret: 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
+      redirectUri: http://localhost:8080/login/oauth2/code/google
+      scope: openid,email,profile
+    oauth2-redirect-url: http://localhost:8080/swagger-ui/oauth2-redirect.html

@@ -1,8 +1,8 @@
 package com.yadev.spring.database.repository;
 
-import com.yadev.spring.dto.PersonalInfo2;
 import com.yadev.spring.database.entity.Role;
 import com.yadev.spring.database.entity.User;
+import com.yadev.spring.dto.PersonalInfo2;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,8 +10,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.history.RevisionRepository;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -54,6 +52,7 @@ public interface UserRepository extends
     @Query(value = "SELECT u.* FROM users u WHERE u.username = :username",
             nativeQuery = true)
     List<User> findAllByUsername(String username);
+
     @Modifying(clearAutomatically = true)
     @Query("update User u " +
             "set u.role = :role " +
