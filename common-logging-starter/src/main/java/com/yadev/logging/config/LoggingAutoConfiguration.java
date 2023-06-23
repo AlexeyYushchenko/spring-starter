@@ -20,10 +20,6 @@ import org.springframework.core.annotation.Order;
 @ConditionalOnProperty(prefix = "app.common.logging", name = "enabled", havingValue = "true")
 public class LoggingAutoConfiguration {
 
-    static {
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    }
-
     @PostConstruct
     void init() {
         log.info("LoggingAutoConfiguration initialized");
@@ -48,12 +44,5 @@ public class LoggingAutoConfiguration {
     public SecondAspect secondAspect() {
         return new SecondAspect();
     }
-
-
-
-
-
-
-
 
 }

@@ -2,7 +2,7 @@ package com.yadev.spring.http.controller;
 
 import com.yadev.spring.database.entity.Role;
 import com.yadev.spring.dto.PageResponse;
-import com.yadev.spring.dto.    UserCreateEditDto;
+import com.yadev.spring.dto.UserCreateEditDto;
 import com.yadev.spring.dto.UserFilter;
 import com.yadev.spring.dto.UserReadDto;
 import com.yadev.spring.service.CompanyService;

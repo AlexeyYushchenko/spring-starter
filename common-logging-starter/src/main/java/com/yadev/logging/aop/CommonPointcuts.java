@@ -16,7 +16,7 @@ public class CommonPointcuts {
     /*
         within - check class type name
      */
-    @Pointcut("within(com.dmdev.*.service.*Service)")
+    @Pointcut("within(com.yadev.*.service.*Service)")
     public void isServiceLayer() {
     }
 }
